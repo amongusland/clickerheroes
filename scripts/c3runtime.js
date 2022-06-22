@@ -36520,26 +36520,8 @@ function forge() {
                     }),
                     (c.clearItems = function (e, t, r) {
                         m(v, arguments, r);
-                    }),
-                    (c.parseUrl = function (e) {
-                        var t = /^(https?):\/\/([^:&^\/]*):?(\d*)(.*)$/g;
-                        t.lastIndex = 0;
-                        var r = t.exec(e),
-                            a = null === r ? null : { full: e, scheme: r[1], host: r[2], port: r[3], path: r[4] };
-                        return (
-                            a &&
-                                ((a.fullHost = a.host),
-                                a.port
-                                    ? 80 !== a.port && "http" === a.scheme
-                                        ? (a.fullHost += ":" + a.port)
-                                        : 443 !== a.port && "https" === a.scheme && (a.fullHost += ":" + a.port)
-                                    : "http" === a.scheme
-                                    ? (a.port = 80)
-                                    : "https" === a.scheme && (a.port = 443),
-                                (a.full = a.scheme + "://" + a.fullHost)),
-                            a
-                        );
                     });
+                    
                 var C = null;
                 (c.getQueryVariables = function (e) {
                     var t,
